@@ -1,12 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
-</LinearLayout>
+<AbsoluteLayout
+android:id="@+id/widget0"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android"
+>
+<EditText
+android:layout_width="208px"
+android:layout_height="123px"
+android:text="0123"
+android:textSize="40sp"
+android:layout_x="8px"
+android:layout_y="53px"
+android:focusable="true"  
+android:focusableInTouchMode="true" 
+android:numeric="integer"
+android:maxLength="4"
+android:id="@+id/edit1">
+</EditText>
+<TextView
+android:id="@+id/widget94"
+android:layout_width="354px"
+android:layout_height="30px"
+android:text="@string/title_prompt"
+android:textSize="15sp"
+android:layout_x="11px"
+android:layout_y="7px"
+>
+</TextView>
+<Button
+android:layout_width="126px"
+android:layout_height="114px"
+android:text="&#35745;&#31639;"
+android:textSize="15sp"
+android:layout_x="230px"
+android:layout_y="54px" android:id="@+id/btn1">
+</Button>
+<Button
+android:layout_width="96px"
+android:layout_height="113px"
+android:text="&#36864;&#20986;"
+android:textSize="15sp"
+android:layout_x="370px"
+android:layout_y="55px"
+android:id="@+id/btnCls">
+</Button>
+
+<TableLayout
+android:id="@+id/widget87"
+android:layout_height="300px"
+android:orientation="vertical"
+android:layout_x="10px"
+android:layout_y="185px"
+android:layout_width="136dp">
+
+<TableRow>
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="0A0B"
+android:textSize="30sp"
+android:id="@+id/result1">
+</TextView>
+</TableRow>
+
+<TableRow>
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="0A0B"
+android:textSize="30sp"
+android:id="@+id/result2">
+</TextView>
+</TableRow>
+
+<TableRow>
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="0A0B"
+android:textSize="30sp"
+android:id="@+id/result3">
+</TextView>
+</TableRow>
+
+<TableRow>
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="0A0B"
+android:textSize="30sp"
+android:id="@+id/result4">
+</TextView>
+</TableRow>
+
+<TableRow>
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="0A0B"
+android:textSize="30sp"
+android:id="@+id/result5">
+</TextView>
+</TableRow>
+
+</TableLayout>
+<TableLayout
+android:id="@+id/widget87"
+android:layout_height="300px"
+android:orientation="vertical"
+android:layout_x="230px"
+android:layout_y="185px"
+android:layout_width="136dp">
+    <TableRow>
+        <TextView android:text="0A0B" android:textSize="30sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/result6"></TextView>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="0A0B" android:textSize="30sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/result7"></TextView>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="0A0B" android:textSize="30sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/result8"></TextView>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="0A0B" android:textSize="30sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/result9"></TextView>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="0A0B" android:textSize="30sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/result10"></TextView>
+    </TableRow>
+</TableLayout>
+<TextView android:text="@string/overten" android:textSize="20sp" android:layout_height="wrap_content" android:layout_x="8dp" android:layout_y="320dp" android:layout_width="277dp" android:id="@+id/textShowReg"></TextView>
+<Button android:layout_height="wrap_content" android:text="查看结果" android:layout_width="82dp" android:layout_x="6dp" android:layout_y="362dp" android:id="@+id/btn2"></Button>
+<TextView android:text="1234" android:layout_height="wrap_content" android:textSize="30sp" android:layout_width="wrap_content" android:layout_x="154dp" android:layout_y="367dp" android:id="@+id/textShowResult"></TextView>
+</AbsoluteLayout>
