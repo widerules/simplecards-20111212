@@ -1,9 +1,15 @@
 package com.ncs.hj;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -55,6 +61,7 @@ public class GuessNumberActivity extends Activity {
     	btn1.setOnClickListener(new ProcessNum());
     	btn2.setOnClickListener(new ShowResult());
     	btnCls.setOnClickListener(new ExitGuess());
+    	edit1.setOnKeyListener(new KeyInput());
     }
     
     class ProcessNum implements OnClickListener {
@@ -77,15 +84,47 @@ public class GuessNumberActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			//textShowResult.
+			textShowResult.setText(result);
 		}
     }
     
+    //控制输入为非重复的数字，重复的数字无法输入。
+    class KeyInput implements OnKeyListener {
+		@Override
+		public boolean onKey(View v, int keyCode, KeyEvent event) {
+			// TODO Auto-generated method stub
+			EditText et = (EditText)v;
+			edit1.setText(deleteRepeat(et.getText().toString()));
+			return false;
+		}
+    	
+    }
+    
     //根据用户输入数字的进行处理，返回结果，A代表数字对且位置对，B代表数字对位置不对
-    public String ProcessGuess(String input) {
+    public String processGuess(String input) {
+
     	return "0A0B";
     }
     
-    //验证用户输入，不可有重复的数字
+    //判断字符串中是否有重复字符，有则删除最后一个
+    public String deleteRepeat(String str) {
+    	return "0";
+    }
+    
     //随机产生四个数字，不可重复
+    public String generateRandomDigits() {
+    	List<Integer> arr = new ArrayList<Integer>();
+
+		
+		for (int i = 0; i < 10; i++) {
+			arr.add(i + 1);
+		}
+		
+		for (int j = 0; j < 4; j++) {
+			int a = (int)(Math.random() * arr.size());
+			arr.remove(a);
+		}
+
+    	return "0000";
+    }
 }
