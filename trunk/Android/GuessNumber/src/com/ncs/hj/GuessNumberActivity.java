@@ -8,8 +8,10 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,7 +24,7 @@ public class GuessNumberActivity extends Activity {
 	Button btnCls = null;
 	TextView textShowInput = null;
 	TextView textShowResult = null;
-	
+
 	TextView textShowReg = null;
 	TextView textShowFinalAnswer = null;
 
@@ -35,7 +37,7 @@ public class GuessNumberActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		finalAnswer = generateRandomDigits();
-		
+
 		edit1 = (EditText) findViewById(R.id.edit1);
 		btn1 = (Button) findViewById(R.id.btn1);
 		btn2 = (Button) findViewById(R.id.btn2);
@@ -49,7 +51,6 @@ public class GuessNumberActivity extends Activity {
 		btn1.setOnClickListener(new ProcessNum());
 		btn2.setOnClickListener(new ShowFinalAnswer());
 		btnCls.setOnClickListener(new ExitGuess());
-		
 
 	}
 
@@ -57,18 +58,26 @@ public class GuessNumberActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			
+			((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))
+					.hideSoftInputFromWindow(GuessNumberActivity.this
+							.getCurrentFocus().getWindowToken(),
+							InputMethodManager.HIDE_NOT_ALWAYS);
 			String result = "0A0B";
 			String input = edit1.getText().toString();
-			
+
 			// 验证输入长度
-			if (input.length() != 4)
+			if (input.length() == 4) {
+				if (existRepeat(input))
+					dialog();
+				else {
+					result = processGuess(input, finalAnswer);
+					textShowInput.setText(input);
+					textShowResult.setText(result);
+				}
+			}
+			else
 				dialog();
-			else if (existRepeat(input))
-				dialog();
-			result = processGuess(input,finalAnswer);
-			textShowInput.setText(input);
-			textShowResult.setText(result);
+			edit1.setText("");
 		}
 	}
 
@@ -111,7 +120,7 @@ public class GuessNumberActivity extends Activity {
 					b++;
 			}
 		}
-		return a+"A"+b+"B";
+		return a + "A" + b + "B";
 	}
 
 	// 判断字符串中是否有重复字符。

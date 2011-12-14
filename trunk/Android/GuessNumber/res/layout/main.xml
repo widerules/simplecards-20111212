@@ -47,7 +47,6 @@ android:id="@+id/btnCls">
 </Button>
 
 <TextView 
-android:text="1234" 
 android:id="@+id/textShowInput" 
 android:textSize="50sp" 
 android:layout_width="wrap_content" 
@@ -56,8 +55,7 @@ android:layout_x="100dp"
 android:layout_y="145dp">
 </TextView>
 
-<TextView 
-android:text="0A0B" 
+<TextView  
 android:id="@+id/textShowResult" 
 android:textSize="50sp" 
 android:layout_width="wrap_content" 
