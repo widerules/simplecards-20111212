@@ -8,7 +8,6 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 <EditText
 android:layout_width="208px"
 android:layout_height="123px"
-android:text="0123"
 android:textSize="40sp"
 android:layout_x="8px"
 android:layout_y="53px"
@@ -34,7 +33,8 @@ android:layout_height="114px"
 android:text="&#35745;&#31639;"
 android:textSize="15sp"
 android:layout_x="230px"
-android:layout_y="54px" android:id="@+id/btn1">
+android:layout_y="54px" 
+android:id="@+id/btn1">
 </Button>
 <Button
 android:layout_width="96px"
@@ -46,89 +46,51 @@ android:layout_y="55px"
 android:id="@+id/btnCls">
 </Button>
 
-<TableLayout
-android:id="@+id/widget87"
-android:layout_height="300px"
-android:orientation="vertical"
-android:layout_x="10px"
-android:layout_y="185px"
-android:layout_width="136dp">
-
-<TableRow>
-<TextView
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="0A0B"
-android:textSize="30sp"
-android:id="@+id/result1">
+<TextView 
+android:text="1234" 
+android:id="@+id/textShowInput" 
+android:textSize="50sp" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_x="100dp" 
+android:layout_y="145dp">
 </TextView>
-</TableRow>
 
-<TableRow>
-<TextView
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="0A0B"
-android:textSize="30sp"
-android:id="@+id/result2">
+<TextView 
+android:text="0A0B" 
+android:id="@+id/textShowResult" 
+android:textSize="50sp" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_x="100dp" 
+android:layout_y="234dp">
 </TextView>
-</TableRow>
 
-<TableRow>
-<TextView
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="0A0B"
-android:textSize="30sp"
-android:id="@+id/result3">
+<TextView 
+android:text="@string/overten" 
+android:textSize="20sp" 
+android:layout_height="wrap_content" 
+android:layout_x="20dp" 
+android:layout_y="320dp" 
+android:layout_width="277dp" 
+android:id="@+id/textShowReg">
 </TextView>
-</TableRow>
 
-<TableRow>
-<TextView
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="0A0B"
-android:textSize="30sp"
-android:id="@+id/result4">
+<Button 
+android:layout_height="wrap_content" 
+android:text="查看结果" 
+android:layout_width="82dp" 
+android:layout_x="6dp" 
+android:layout_y="362dp" 
+android:id="@+id/btn2">
+</Button>
+
+<TextView 
+android:layout_height="wrap_content" 
+android:textSize="30sp" 
+android:layout_width="wrap_content" 
+android:layout_x="154dp" 
+android:layout_y="367dp" 
+android:id="@+id/textShowFinalAnswer">
 </TextView>
-</TableRow>
-
-<TableRow>
-<TextView
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="0A0B"
-android:textSize="30sp"
-android:id="@+id/result5">
-</TextView>
-</TableRow>
-
-</TableLayout>
-<TableLayout
-android:id="@+id/widget87"
-android:layout_height="300px"
-android:orientation="vertical"
-android:layout_x="230px"
-android:layout_y="185px"
-android:layout_width="136dp">
-    <TableRow>
-        <TextView android:text="0A0B" android:textSize="30sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/result6"></TextView>
-    </TableRow>
-    <TableRow>
-        <TextView android:text="0A0B" android:textSize="30sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/result7"></TextView>
-    </TableRow>
-    <TableRow>
-        <TextView android:text="0A0B" android:textSize="30sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/result8"></TextView>
-    </TableRow>
-    <TableRow>
-        <TextView android:text="0A0B" android:textSize="30sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/result9"></TextView>
-    </TableRow>
-    <TableRow>
-        <TextView android:text="0A0B" android:textSize="30sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/result10"></TextView>
-    </TableRow>
-</TableLayout>
-<TextView android:text="@string/overten" android:textSize="20sp" android:layout_height="wrap_content" android:layout_x="8dp" android:layout_y="320dp" android:layout_width="277dp" android:id="@+id/textShowReg"></TextView>
-<Button android:layout_height="wrap_content" android:text="查看结果" android:layout_width="82dp" android:layout_x="6dp" android:layout_y="362dp" android:id="@+id/btn2"></Button>
-<TextView android:text="1234" android:layout_height="wrap_content" android:textSize="30sp" android:layout_width="wrap_content" android:layout_x="154dp" android:layout_y="367dp" android:id="@+id/textShowResult"></TextView>
 </AbsoluteLayout>
