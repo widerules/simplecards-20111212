@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.AnimationSet;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -62,12 +64,23 @@ public class SiimpleCardsActivity extends Activity {
 			image2.setImageDrawable(getResources().getDrawable(sl[1]));
 			image3.setImageDrawable(getResources().getDrawable(sl[2]));
 			
-			if(image1.getId() != v.getId())
+			AnimationSet animationSet = new AnimationSet(true);
+			AlphaAnimation alphaAnimation = new AlphaAnimation(1,0);
+			alphaAnimation.setDuration(1000);
+			animationSet.addAnimation(alphaAnimation);
+			
+			if(image1.getId() != v.getId()) {
+				image1.startAnimation(animationSet);
 				image1.setAlpha(100);
-			if(image2.getId() != v.getId())
+			}
+			if(image2.getId() != v.getId()) {
+				image2.startAnimation(animationSet);
 				image2.setAlpha(100);
-			if(image3.getId() != v.getId())
+			}
+			if(image3.getId() != v.getId()) {
+				image3.startAnimation(animationSet);
 				image3.setAlpha(100);
+			}
 		}
     }
     
