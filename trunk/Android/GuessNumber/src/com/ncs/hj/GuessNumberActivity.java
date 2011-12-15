@@ -5,10 +5,8 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
@@ -24,6 +22,7 @@ public class GuessNumberActivity extends Activity {
 	Button btnCls = null;
 	TextView textShowInput = null;
 	TextView textShowResult = null;
+	TextView textShowRemainTimes = null;
 
 	TextView textShowReg = null;
 	TextView textShowFinalAnswer = null;
@@ -44,6 +43,7 @@ public class GuessNumberActivity extends Activity {
 		btnCls = (Button) findViewById(R.id.btnCls);
 		textShowInput = (TextView) findViewById(R.id.textShowInput);
 		textShowResult = (TextView) findViewById(R.id.textShowResult);
+		textShowRemainTimes = (TextView) findViewById(R.id.remainTimes);
 
 		textShowReg = (TextView) findViewById(R.id.textShowReg);
 		textShowFinalAnswer = (TextView) findViewById(R.id.textShowFinalAnswer);
@@ -77,7 +77,30 @@ public class GuessNumberActivity extends Activity {
 			}
 			else
 				dialog();
+			
+			guessTimes++;
 			edit1.setText("");
+			textShowRemainTimes.setText("还有"+(10-guessTimes)+"次机会哦。");
+			
+			if(result.equals("4A0B")) {
+				textShowRemainTimes.setText("");
+				switch (guessTimes) {
+					case 1:textShowReg.setText(getResources().getString(R.string.one));break;
+					case 2:textShowReg.setText(getResources().getString(R.string.two));break;
+					case 3:textShowReg.setText(getResources().getString(R.string.three));break;
+					case 4:textShowReg.setText(getResources().getString(R.string.four));break;
+					case 5:textShowReg.setText(getResources().getString(R.string.five));break;
+					case 6:textShowReg.setText(getResources().getString(R.string.six));break;
+					case 7:textShowReg.setText(getResources().getString(R.string.seven));break;
+					case 8:textShowReg.setText(getResources().getString(R.string.eight));break;
+					case 9:textShowReg.setText(getResources().getString(R.string.nine));break;
+					case 10:textShowReg.setText(getResources().getString(R.string.ten));break;
+				}
+			}
+			
+			if(guessTimes >= 10 && (!result.equals("4A0B"))) {
+				textShowReg.setText(getResources().getString(R.string.overten));
+			}
 		}
 	}
 
